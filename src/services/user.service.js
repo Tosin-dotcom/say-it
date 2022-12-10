@@ -137,13 +137,15 @@ const getUserById = async (id) => {
  * @param {string} email
  * @returns {Promise<User>}
  */
+
 const getUserByEmail = async (email) => {
-  
-  return db.users.findOne({ where: { email } }, { include: [{ model: db.admins }, { model: db.agencies }] });
+  const user = await db.users.findOne({ where: { email }, include: [{ model: db.admins }, { model: db.agencies }] });
+  return user;
 };
 
 const getUserByUserName = async (userName) => {
-  return db.users.findOne({ where: { userName } }, { include: [{ model: db.admins }, { model: db.agencies }] });
+  const user = await db.users.findOne({ where: { userName }, include: [{ model: db.admins }, { model: db.agencies }] });
+  return user;
 };
 
 /**
