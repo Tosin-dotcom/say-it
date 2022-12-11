@@ -181,9 +181,16 @@ const deleteUserById = async (userId) => {
   return user;
 };
 
+
+const getAllReporters = async() => {
+  const users = await db.users.findAll({where: {role:'reporter'}})
+  return users;
+}
+
 module.exports = {
   createUser,
   createAdminUsers,
+  getAllReporters,
   queryUsers,
   getUserById,
   getUserByEmail,

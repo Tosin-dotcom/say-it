@@ -6,7 +6,7 @@ const roleType = {
 const allRoles = {
   reporter: [],
   agent: ['viewReports'],
-  admin: ['manageAgents', 'manageBlog', 'manageReports'],
+  admin: ['manageAgents', 'manageBlog', 'manageReports', 'manageUsers'],
 };
 
 const roles = Object.keys(allRoles);
