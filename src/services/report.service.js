@@ -78,9 +78,9 @@ const updateReportById = async (user, reportId, updateBody) => {
   if (!report) {
     throw new ApiError(httpStatus.NOT_FOUND, 'report not found');
   }
-  if (report.userId !== user.id) {
-    throw new ApiError(httpStatus.FORBIDDEN, "You're not allowed to edit others' report");
-  }
+ 
+
+  
   Object.assign(report, updateBody);
   await db.reports.update(report, { where: { id: reportId } });
   return report;
