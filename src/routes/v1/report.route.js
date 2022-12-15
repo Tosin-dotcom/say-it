@@ -24,7 +24,7 @@ router.route('/user').get(auth(), validate(reportValidation.getReports), reportC
 router
   .route('/:reportId')
   .get(auth(), validate(reportValidation.getReportById), reportController.getReportById)
-  .patch(auth(), validate(reportValidation.updateReportById), reportController.updateReport)
+  .patch(auth(), reportController.updateReport)
   .delete(auth(), validate(reportValidation.deleteReport), reportController.deleteReport);
 
 module.exports = router;
